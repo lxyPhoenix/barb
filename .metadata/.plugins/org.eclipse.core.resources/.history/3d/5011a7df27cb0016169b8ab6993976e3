@@ -1,0 +1,32 @@
+package com.ytcx.ui;
+import java.awt.*;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.JFrame.*;
+import javax.swing.table.DefaultTableModel;
+
+import com.ytcx.servers.Operation;
+public class UserWindow extends JFrame{
+	private Operation oper=new Operation();
+	private JTable table=new JTable();
+	private DefaultTableModel dtm=new DefaultTableModel();
+	Vector colName=new Vector();
+	public UserWindow(){
+		super("欢迎使用个人记账本");
+		setBounds(50,50,900,600);
+		
+	}
+	public JTable setTable(){
+		
+		colName.add("流水号");
+		colName.add("类型");
+		colName.add("金额");
+		colName.add("日期");
+		colName.add("备注");
+		Vector data=oper.select();
+		dtm.setDataVector(data, colName);
+		table.setModel(dtm);
+	}
+}

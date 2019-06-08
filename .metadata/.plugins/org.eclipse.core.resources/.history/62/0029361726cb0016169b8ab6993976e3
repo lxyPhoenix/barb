@@ -1,0 +1,13 @@
+package com.ytcx.server;
+
+import com.ytcx.io.FileIO;
+import com.ytcx.io.FileIOImp;
+import com.ytcx.util.Tool;
+
+public class Operation {
+	FileIO io=new FileIOImp();
+	Tool tool=new Tool();
+	
+	
+
+}

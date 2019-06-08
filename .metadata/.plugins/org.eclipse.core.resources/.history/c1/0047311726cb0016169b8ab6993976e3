@@ -1,0 +1,22 @@
+package com.ytcx.servers;
+
+import java.util.Vector;
+
+import com.ytcx.io.FileIO;
+import com.ytcx.io.FileIOImp;
+import com.ytcx.util.Tool;
+
+public class Operation {
+	FileIO io=new FileIOImp();
+	Tool tool=new Tool();
+	public Operation(){
+		io.checkFile();
+	}
+	public Vector select(){
+		return tool.StringToVec(io.read());
+	}
+	public void add(String data){
+		io.write(data, true);
+	}
+
+}
